@@ -1,0 +1,69 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.grid-container {
+    display:grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 0px;
+    margin: 10px auto;
+    width: 330px;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 1px;
+    border-color: gray;
+    border-style: solid;
+    width: 100%;
+    margin: 0px;
+}
+
+/* Create top border for top cells */
+.cell:nth-child(-n + 9) {
+    border-top-width: 4px;
+    border-top-color: black;
+}
+
+/* Create row borders for block division */
+.cell:nth-child(n + 28):nth-child(-n + 36),
+.cell:nth-child(n + 55):nth-child(-n + 63) {
+    border-top-width: 4px;
+    border-top-color: black;
+}
+
+/* Create bottom border for bottom cells */
+.cell:nth-last-child(-n + 9) {
+    border-bottom-width: 4px;
+    border-bottom-color: black; 
+}
+
+/* Create left border on cells */
+.cell:nth-child(3n + 1) {
+    border-left-width: 4px;
+    border-left-color: black;
+}
+
+/* Create right border for far right cells */
+.cell:nth-child(9n) {
+    border-right-width: 4px;
+    border-right-color: black;
+}
+
+.cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 0px;
+}
