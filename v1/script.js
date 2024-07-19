@@ -17,17 +17,19 @@ for (let i = 0; i < 9; i++) {
         cell.classList.add('cell');
         gridContainer.appendChild(cell);
 
-        const input = document.createElement('input');
-        input.min = 1;
-        input.max = 1;
-        input.classList.add('input-cell');
 
-        if (startValues[i][j] !== 0) {
-            input.value = startValues[i][j];
-            // input.disabled = true;
+
+        if (startValues[i][j] === 0) {
+            const input = document.createElement('input');
+            input.min = 1;
+            input.max = 1;
+            input.classList.add('input-cell');
+            cell.appendChild(input);
+        } else {
+            cell.textContent = startValues[i][j];
         }
      
-        cell.appendChild(input);
+
         // console.log(i + ' ' + j);
     }
 }
